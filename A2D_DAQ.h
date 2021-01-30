@@ -2,9 +2,14 @@
  * Written By: Micah Black
  * Date: Jan 22, 2021
  *
+ *
+ * Arduino Library Requirements:
+ *   MUX4067
+ *   TCA9539
+ *   Adafruit_ADS1015
+ *
  * This class will deal with interfacing with the board
- * First rev will focus on reading analog values from
- * specified pins
+ * 
  */
 
 

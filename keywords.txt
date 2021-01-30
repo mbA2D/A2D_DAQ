@@ -1,0 +1,9 @@
+A2D_DAQ						KEYWORD1
+A2D_DAQ_init				KEYWORD2
+A2D_DAQ_reset				KEYWORD2
+A2D_DAQ_config_channel		KEYWORD2
+A2D_DAQ_get_default_config	KEYWORD2
+A2D_DAQ_get_analog			KEYWORD2
+A2D_DAQ_get_analog_mv		KEYWORD2
+A2D_DAQ_get_dig_in			KEYWORD2
+A2D_DAQ_set_dig_out			KEYWORD2
