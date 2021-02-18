@@ -103,11 +103,13 @@ void loop() {
   //INSTR:READ:ANA? (@ch) //read ADC ch_list and return
   else if (CMDIS(command, "INSTR:READ:ANA?")){
     Serial.println(daq.A2D_DAQ_get_analog_mv(channel_num));
+	Serial.flush();
   }
   
   //INSTR:READ:DIG? (@ch) //read digital input register and return
   else if (CMDIS(command, "INSTR:READ:DIG?")){
     Serial.println(daq.A2D_DAQ_get_dig_in(channel_num));
+	Serial.flush();
   }
 }
 
