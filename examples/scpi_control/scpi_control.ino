@@ -4,6 +4,8 @@ DATE: Jan 24, 2021
 PURPOSE: This example implements some SCPI commands
         (that don't completely follow the susbystem style standard)
         to communicate with the DAQ.
+CHANGELOG:
+	Feb 18, 2021 - Added Serial.flush(); after serial println commands on query
 */
 
 #include <A2D_DAQ.h>
@@ -69,6 +71,7 @@ void loop() {
     Serial.print(DESCRIPTION);
     Serial.print(" ");
     Serial.println(VERSION);
+    Serial.flush();
   }
   
   //*RST
@@ -103,13 +106,13 @@ void loop() {
   //INSTR:READ:ANA? (@ch) //read ADC ch_list and return
   else if (CMDIS(command, "INSTR:READ:ANA?")){
     Serial.println(daq.A2D_DAQ_get_analog_mv(channel_num));
-	Serial.flush();
+    Serial.flush();
   }
   
   //INSTR:READ:DIG? (@ch) //read digital input register and return
   else if (CMDIS(command, "INSTR:READ:DIG?")){
     Serial.println(daq.A2D_DAQ_get_dig_in(channel_num));
-	Serial.flush();
+    Serial.flush();
   }
 }
 
