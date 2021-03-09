@@ -6,6 +6,7 @@ PURPOSE: This example implements some SCPI commands
         to communicate with the DAQ.
 CHANGELOG:
 	Feb 18, 2021 - Added Serial.flush(); after serial println commands on query
+	Mar 09, 2021 - Removed commented debugging lines
 */
 
 #include <A2D_DAQ.h>
@@ -156,17 +157,4 @@ void parse_serial(char ser_buf[], char command[], uint8_t *channel_num, bool *va
     *channel_num = 63;
   else if(*channel_num < 0)
     *channel_num = 0;
-
-  /*
-  Serial.print(F("Serial Buffer:"));
-  Serial.println(ser_buf);
-  Serial.print(F("Command:"));
-  Serial.println(command);
-  Serial.print(F("Channel:"));
-  Serial.println(*channel_num);
-  Serial.print(F("Value:"));
-  Serial.println(*value_bool);
-  Serial.println("");
-  */
-
 }

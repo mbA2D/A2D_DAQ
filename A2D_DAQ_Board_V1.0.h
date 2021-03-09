@@ -15,8 +15,11 @@
 #define RESET_PIN		4
 #define INT_PIN			3
 #define NUM_IO_EXP		4
-#define IO_EXP_I2C_ADDR_START	0x74
-#define NUM_IO_EXPANDERS	4
+//I2C Addresses for the different channel ranges
+#define IO_EXP_I2C_ADDR_CH_0_15 0x74
+#define IO_EXP_I2C_ADDR_CH_16_31 0x76
+#define IO_EXP_I2C_ADDR_CH_32_47 0x75
+#define IO_EXP_I2C_ADDR_CH_48_63 0x77
 
 //ADC Pins - ADS1115
 #define ALERT_PIN		2

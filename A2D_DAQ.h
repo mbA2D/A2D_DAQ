@@ -55,7 +55,7 @@ class A2D_DAQ
 	private:
 		//*************CLASSES****************
 		//4 instances of the muxes with different I2C addr
-		TCA9539 io[NUM_IO_EXPANDERS];
+		TCA9539 io[NUM_IO_EXP];
 		
 		//all muxes on the board are controlled
 		//together so we only need 1 class instance
