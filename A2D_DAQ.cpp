@@ -37,6 +37,10 @@ void A2D_DAQ::A2D_DAQ_init()
 
 void A2D_DAQ::A2D_DAQ_reset()
 {
+	//LED
+	pinMode(LED_PIN, OUTPUT);
+	digitalWrite(LED_PIN, LOW);
+	
 	//set up all 4 IO Expanders
 	for(int i = 0; i < NUM_IO_EXP; i++)
 		io[i].TCA9539_init();
@@ -51,6 +55,11 @@ void A2D_DAQ::A2D_DAQ_reset()
 	// - default will be all inputs according to private struct
 	for(int i = 0; i < NUM_CHANNELS; i++)
 		A2D_DAQ_config_channel(i, _default_ch_config);
+}
+
+void A2D_DAQ_set_led(bool state)
+{
+	digitalWrite(LED_PIN, state);
 }
 
 int16_t A2D_DAQ::A2D_DAQ_get_analog(uint8_t channel)

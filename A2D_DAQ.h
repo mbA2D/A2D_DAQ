@@ -51,6 +51,7 @@ class A2D_DAQ
 		double A2D_DAQ_get_analog_mv(uint8_t channel);
 		bool A2D_DAQ_get_dig_in(uint8_t channel);
 		void A2D_DAQ_set_dig_out(uint8_t channel, bool output_val);
+		void A2D_DAQ_set_led(bool state);
 		
 	private:
 		//*************CLASSES****************

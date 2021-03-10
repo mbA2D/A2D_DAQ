@@ -115,6 +115,11 @@ void loop() {
     Serial.println(daq.A2D_DAQ_get_dig_in(channel_num));
     Serial.flush();
   }
+  
+  //INSTR:DAQ:SET:LED VAL  //VAL is boolean 0 or 1
+  else if (CMDIS(command, "INSTR:DAQ:SET:LED")){
+    daq.A2D_DAQ_set_led(value_bool);
+  }
 }
 
 void parse_serial(char ser_buf[], char command[], uint8_t *channel_num, bool *value_bool){

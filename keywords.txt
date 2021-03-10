@@ -7,3 +7,4 @@ A2D_DAQ_get_analog			KEYWORD2
 A2D_DAQ_get_analog_mv		KEYWORD2
 A2D_DAQ_get_dig_in			KEYWORD2
 A2D_DAQ_set_dig_out			KEYWORD2
+A2D_DAQ_set_led				KEYWORD2

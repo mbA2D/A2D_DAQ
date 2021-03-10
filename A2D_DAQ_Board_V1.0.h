@@ -4,6 +4,9 @@
 //Total channels
 #define NUM_CHANNELS	64
 
+//LED Pin
+#define LED_PIN			13
+
 //MUX Pins - CD74HC4067
 #define S0_PIN			5
 #define S1_PIN			6
