@@ -57,7 +57,7 @@ void A2D_DAQ::A2D_DAQ_reset()
 		A2D_DAQ_config_channel(i, _default_ch_config);
 }
 
-void A2D_DAQ_set_led(bool state)
+void A2D_DAQ::A2D_DAQ_set_led(bool state)
 {
 	digitalWrite(LED_PIN, state);
 }

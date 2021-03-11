@@ -6,7 +6,7 @@ PURPOSE: This example implements some SCPI commands
         to communicate with the DAQ.
 CHANGELOG:
 	Feb 18, 2021 - Added Serial.flush(); after serial println commands on query
-	Mar 09, 2021 - Removed commented debugging lines
+	Mar 09, 2021 - Added support for flashing the onboard LED
 */
 
 #include <A2D_DAQ.h>
@@ -116,7 +116,9 @@ void loop() {
     Serial.flush();
   }
   
-  //INSTR:DAQ:SET:LED VAL  //VAL is boolean 0 or 1
+  //INSTR:DAQ:SET:LED X VAL  //X is placeholder for channel
+  //can be anything, but we need it for the basic parsing currently in use
+  //VAL is boolean 0 or 1
   else if (CMDIS(command, "INSTR:DAQ:SET:LED")){
     daq.A2D_DAQ_set_led(value_bool);
   }
