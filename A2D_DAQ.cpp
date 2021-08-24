@@ -20,6 +20,8 @@ A2D_DAQ::A2D_DAQ(): io({TCA9539(RESET_PIN, INT_PIN, IO_EXP_I2C_ADDR_CH_0_15),
 {	
 	_default_ch_config.channel_dir = A2D_DAQ_INPUT;
 	_default_ch_config.channel_default_state = A2D_DAQ_LOW;
+	_A2D_DAQ_read_delay_ms_default = 5
+	_A2D_DAQ_read_delay_ms = _A2D_DAQ_read_delay_ms_default
 }
 
 void A2D_DAQ::A2D_DAQ_init()
@@ -55,6 +57,10 @@ void A2D_DAQ::A2D_DAQ_reset()
 	// - default will be all inputs according to private struct
 	for(int i = 0; i < NUM_CHANNELS; i++)
 		A2D_DAQ_config_channel(i, _default_ch_config);
+
+	//reset to the default read delay	
+	_A2D_DAQ_read_delay_ms = _A2D_DAQ_read_delay_ms_default
+
 }
 
 void A2D_DAQ::A2D_DAQ_set_led(bool state)
@@ -76,7 +82,7 @@ int16_t A2D_DAQ::A2D_DAQ_get_analog(uint8_t channel)
 	mux.MUX4067_set_pin(io_channel);
 	
 	//delay to give small RC filter time to charge
-	delay(5);
+	delay(_A2D_DAQ_read_delay_ms);
 	
 	//read correct ADC channel
 	return adc.readADC_SingleEnded(io_channel_index);
@@ -123,6 +129,11 @@ void A2D_DAQ::A2D_DAQ_set_dig_out(uint8_t channel, bool output_val)
 A2D_DAQ_channel_config A2D_DAQ::A2D_DAQ_get_default_config()
 {
 	return _default_ch_config;
+}
+
+void A2D_DAQ::A2D_DAQ_set_read_delay_ms(uint16_t read_delay_ms)
+{
+	_A2D_DAQ_read_delay_ms = read_delay_ms;
 }
 
 void A2D_DAQ::A2D_DAQ_config_channel(uint8_t channel, A2D_DAQ_channel_config config)
