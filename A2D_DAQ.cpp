@@ -20,8 +20,8 @@ A2D_DAQ::A2D_DAQ(): io({TCA9539(RESET_PIN, INT_PIN, IO_EXP_I2C_ADDR_CH_0_15),
 {	
 	_default_ch_config.channel_dir = A2D_DAQ_INPUT;
 	_default_ch_config.channel_default_state = A2D_DAQ_LOW;
-	_A2D_DAQ_read_delay_ms_default = 5
-	_A2D_DAQ_read_delay_ms = _A2D_DAQ_read_delay_ms_default
+	_A2D_DAQ_read_delay_ms_default = 5;
+	_A2D_DAQ_read_delay_ms = _A2D_DAQ_read_delay_ms_default;
 }
 
 void A2D_DAQ::A2D_DAQ_init()
@@ -59,7 +59,7 @@ void A2D_DAQ::A2D_DAQ_reset()
 		A2D_DAQ_config_channel(i, _default_ch_config);
 
 	//reset to the default read delay	
-	_A2D_DAQ_read_delay_ms = _A2D_DAQ_read_delay_ms_default
+	_A2D_DAQ_read_delay_ms = _A2D_DAQ_read_delay_ms_default;
 
 }
 
