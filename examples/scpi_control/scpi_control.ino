@@ -159,7 +159,7 @@ void parse_serial(char ser_buf[], char command[], uint8_t *channel_num, bool *va
   token = strtok(value_str, delimeters);
   *value_int = atoi(token);
   *value_bool = 0;
-  if(*value_int > 1)
+  if(*value_int >= 1)
     *value_bool = 1;
   
   strcpy(delimeters, "@)");
