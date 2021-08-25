@@ -45,6 +45,8 @@ class A2D_DAQ
 		void A2D_DAQ_reset();
 		void A2D_DAQ_config_channel(uint8_t channel, A2D_DAQ_channel_config config);
 		A2D_DAQ_channel_config A2D_DAQ_get_default_config();
+		void A2D_DAQ_set_read_delay_ms(uint16_t read_delay_ms);
+		
 		
 		//Interface
 		int16_t A2D_DAQ_get_analog(uint8_t channel);
@@ -70,6 +72,8 @@ class A2D_DAQ
 		
 		//default channel configuration
 		A2D_DAQ_channel_config _default_ch_config;
+		uint16_t _A2D_DAQ_read_delay_ms;
+		uint16_t _A2D_DAQ_read_delay_ms_default;
 		
 		//************METHODS****************
 		bool _A2D_DAQ_valid_channel(uint8_t channel);
