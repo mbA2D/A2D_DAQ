@@ -28,7 +28,7 @@ CHANGELOG:
 #define CMDIS(i,c) (!strcmp_P(i, PSTR(c)))
 
 //Function Prototypes:
-void parse_serial(char ser_buf[], char command[], uint8_t* channel_num, bool* value_bool);
+void parse_serial(char ser_buf[], char command[], uint8_t* channel_num, bool* value_bool, int16_t* value_int);
 
 A2D_DAQ daq;
 
@@ -158,10 +158,9 @@ void parse_serial(char ser_buf[], char command[], uint8_t *channel_num, bool *va
 
   token = strtok(value_str, delimeters);
   *value_int = atoi(token);
+  *value_bool = 0;
   if(*value_int > 1)
     *value_bool = 1;
-  else if(*value_int <= 0)
-    *value_bool = 0;
   
   strcpy(delimeters, "@)");
   token = strtok(channel_str, delimeters); //get rid of "(@"
