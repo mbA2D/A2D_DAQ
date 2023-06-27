@@ -2,7 +2,7 @@
 
 How to begin reading data from the A2D 64CH DAQ.
 
-# Prerequisites
+## Prerequisites
 
 1. Install the Arduino IDE: https://www.arduino.cc/en/software
    a. Download the .zip for the A2D_DAQ library: https://github.com/mbA2D/A2D_DAQ
@@ -16,7 +16,7 @@ How to begin reading data from the A2D 64CH DAQ.
 
 3. Download 'read_analog_one_ch.ino' from the A2D_DAQ library: ...\examples\read_analog_one_ch\read_analog_one_ch.ino
 
-# Setup for example
+## Example Setup
 
 1. Plug in the A2D 64CH DAQ into your PC via USB
 2. Press the 'Reset' button on the DAQ
@@ -27,6 +27,6 @@ How to begin reading data from the A2D 64CH DAQ.
 7. Upload
 8. Check 'Serial Monitor' to verify if the board is working. Make sure your 'Baud' rate matches that defined for the following function: Serial.begin(115200)
 
-# Troubleshooting
+## Troubleshooting
 
 - If Arduino IDE cannot find the port then make sure you are using a USB capable of data-transfer & you have the CP210x Driver installed.
