@@ -24,9 +24,10 @@ How to begin reading data from the A2D 64CH DAQ.
 3. Open 'read_analog_one_ch.ino' in the Arduino IDE
 4. Select the Arduino Pro Mini board: Tools > Board > Boards Manager
 5. Select ATmega328p (3.3V, 8MHz) Processor: Tools > Processor
-6. Verify
-7. Upload
-8. Check 'Serial Monitor' to verify if the board is working. Make sure your 'Baud' rate matches that defined for the following function: Serial.begin(115200)
+6. Select COM3 Port: Tools > Port
+7. Verify
+8. Upload
+9. Check 'Serial Monitor' to verify if the board is working. Make sure your 'Baud' rate matches that defined for the following function: Serial.begin(115200)
 
 ## Troubleshooting
 
