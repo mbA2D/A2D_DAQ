@@ -16,7 +16,7 @@ A2D_DAQ::A2D_DAQ(): io({TCA9539(RESET_PIN, INT_PIN, IO_EXP_I2C_ADDR_CH_0_15),
 						TCA9539(RESET_PIN, INT_PIN, IO_EXP_I2C_ADDR_CH_32_47),
 						TCA9539(RESET_PIN, INT_PIN, IO_EXP_I2C_ADDR_CH_48_63)}),
 					mux(EN_PIN, S0_PIN, S1_PIN, S2_PIN, S3_PIN),
-					adc()
+					adc(ADC_I2C_ADDR)
 {	
 	_default_ch_config.channel_dir = A2D_DAQ_INPUT;
 	_default_ch_config.channel_default_state = A2D_DAQ_LOW;
