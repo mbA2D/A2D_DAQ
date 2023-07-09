@@ -16,7 +16,7 @@
 #include "Arduino.h"
 #include <Wire.h>
 #include <TCA9539.h>
-#include <Adafruit_ADS1015.h>
+#include <Adafruit_ADS1X15.h>
 #include <MUX4067.h>
 #include "A2D_DAQ_Board_V1.0.h" //header file with pins, etc
 
