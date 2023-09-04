@@ -1,6 +1,7 @@
 # A2D_DAQ
 
-How to begin reading data from the A2D 64CH DAQ.
+How to begin reading data from the A2D 64CH DAQ.  
+Hardware setup and documentation: https://a2delectronics.ca/2023/07/29/a2d-64ch-data-acquisition-daq-board/  
 
 ## Prerequisites
 
